@@ -11,6 +11,7 @@ def rearrange_references(dictionary_json):
             new_rule_references.append(ref["text"])
         rule["references"] = new_rule_references
     dictionary_json["references"] = global_references
+    return dictionary_json
 
 
 def rearrange_identifiers(dictionary_json):
@@ -22,6 +23,7 @@ def rearrange_identifiers(dictionary_json):
             new_rule_identifiers.append(ident["text"])
         rule["identifiers"] = new_rule_identifiers
     dictionary_json["identifiers"] = global_identifiers
+    return dictionary_json
 
 
 def _get_dict_or_value(val):
@@ -60,3 +62,4 @@ def remove_not_selected_rules(dictionary_json, ids_of_selected_rules):
         ):
             selected_rules[rule_id] = rule
     dictionary_json["rules"] = selected_rules
+    return dictionary_json
